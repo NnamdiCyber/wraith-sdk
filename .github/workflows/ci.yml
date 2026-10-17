@@ -16,12 +16,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run check:pnpm-version
       - run: pnpm run format:check
       - run: pnpm build
       - run: pnpm api:check
@@ -60,7 +61,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
@@ -80,7 +81,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -123,7 +124,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: oven-sh/setup-bun@v2
         if: matrix.bun
         with:
@@ -162,7 +163,7 @@ jobs:
       - uses: pnpm/action-setup@v4
         if: steps.should-run.outputs.run == 'true'
         with:
-          version: 10
+          version: 10.34.4
 
       - uses: actions/setup-node@v4
         if: steps.should-run.outputs.run == 'true'
@@ -208,7 +209,7 @@ jobs:
       - uses: pnpm/action-setup@v4
         if: steps.should-run.outputs.run == 'true'
         with:
-          version: 10
+          version: 10.34.4
 
       - uses: actions/setup-node@v4
         if: steps.should-run.outputs.run == 'true'
@@ -236,7 +237,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -252,7 +253,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -277,7 +278,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -302,7 +303,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
