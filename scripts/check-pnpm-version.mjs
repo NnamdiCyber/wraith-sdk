@@ -27,9 +27,7 @@ if (actualMajor !== pinnedMajor) {
   console.error(
     `error: pnpm major version mismatch: lockfile pinned to ${packageManager}, but running pnpm@${actualVersion}`,
   );
-  console.error(
-    'Re-run install with the pinned pnpm major before modifying the lockfile.',
-  );
+  console.error('Re-run install with the pinned pnpm major before modifying the lockfile.');
   process.exit(1);
 }
 
